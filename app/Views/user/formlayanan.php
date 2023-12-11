@@ -20,8 +20,10 @@
                                 <tr class="text-center header">
                                     <th>No</th>
                                     <th>Kriteria</th>
-                                    <th>Pilih Kondisi</th>
-    
+                                    <th>Yakin</th>
+                                    <th>Cukup Yakin</th>
+                                    <th>Kurang Yakin</th>
+                                    <th>Tidak Yakin</th>
                                 </tr>
                                 <?php
                                 $no = 1;
@@ -37,39 +39,20 @@
                                             <?= $b['keterangan']; ?>
     
                                         </td>
+                                  
                                         <td>
-    
-    
-                                            <div class="form-group">
-    
-                                                <select class="form-control pilihkondisi" id="select<?= $no; ?>"
-                                                    data-id="<?= $no; ?>" name="nilai[]">
-                                                    <!-- <option value="0" data-id="0">Pilih jika sesuai</option> -->
-                                                    <?php for($i = 0; $i < 4; $i++) {
-                                                        $nilai = [1, 0.8, 0.4, 0];
-                                                        $ket = [
-                                                            'Yakin',
-                                                            'Cukup Yakin',
-                                                            'Kurang Yakin',
-                                                            'Tidak Yakin'
-                                                        ]; ?>
-                                                        <option value="<?= $nilai[$i]; ?>" data-id="<?= $i + 1; ?>
-                                                            " <?php if($nilai[$i] == 0) {
-                                                                echo 'selected';
-                                                            }
-                                                            ; ?>>
-                                                            <?php echo $ket[$i]; ?>
-                                                        </option>
-    
-                                                        <?php
-                                                    }
-                                                    ; ?>
-                                                </select>   
-    
-                                            </div>
-    
-    
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="1">
                                         </td>
+                                        <td>
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.8">
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.4">
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0">
+                                        </td>
+                                    
     
                                     </tr>
                                 <?php endforeach; ?>

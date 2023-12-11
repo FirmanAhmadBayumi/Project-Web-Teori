@@ -179,50 +179,34 @@ class Admin extends BaseController
 
                 $data = [
                     'title' => 'Form Update product',
-                    'p' =>  $this->ProductModel->getproductid($id)
+                    'p' =>  $this->skala->getSkala($id)
                 ];
+                // dd($data);
                 return view('admin/editproduct',$data);
             }
+
             public function updateproduct($id)
             {
-
-                $path = 'assets/img/';
-                $foto = $this->request->getFile('foto_product');
-            
-                // Periksa apakah ada file foto baru yang diunggah
-                if ($foto->isValid()) {
-                    $name = $foto->getRandomName();
-                    if ($foto->move($path, $name)) {
-                        $foto = base_url($path . $name);
-                    }
-                } else {
-                    $existingData = $this->ProductModel->getproductid($id); 
-                    $foto = $existingData['foto_product'];
-                }
-            
                 $data = [
-                    'nama_product' => $this->request->getVar('nama_product'),
-                    'harga_product' => $this->request->getVar('harga_product'),
-                    'stok_product' => $this->request->getVar('stok_product'),
-                    'foto_product' => $foto,
+                    'nama' => $this->request->getVar('nama'),
+                    'deskripsi' => $this->request->getVar('deskripsi'),
                 ];
             
-                $result = $this->ProductModel->updateproduct($id, $data);
-            
+                $result = $this->skala->updateSkala($id, $data);
+      
                 if (!$result) {
                     return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+                    
                 }
             
                 return redirect()->to('admin/product');
             }
             public function destroyproduct($id)
             {
-                $result = $this->ProductModel->deleteproduct($id);
-                if (!$result) {
-                    return redirect()->back()->with('Error', 'Gagal menghapus Data');
-                }
-                return redirect()->to(base_url('/admin/product/'))->with('success', 'Berhasil menghapus data');
+                $this->skala->deleteSkala($id);
+                return redirect()->to('admin/product');
             }
+            
     public function listService(): string
     {
         $data = [

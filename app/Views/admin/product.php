@@ -11,11 +11,8 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Foto product</th>
-                                            <th>Nama product</th>
-                                            <th>Stok product</th>
-                                            <th>Harga product</th>
-                                            <th>Aksi</th>
+                                            <th>Nama</th>
+                                            <th>Deskripsi</th>                
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -23,15 +20,13 @@
                                      <?php foreach ($product as $p) : ?>
                                         <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><img src="<?= $p['foto_product'] ?? 'https://bootdey.com/img/Content/avatar/avatar7.png' ?>" alt="" height="100px" width="100px"></td>
-                                        <td><?= $p['nama_product']; ?></td>
-                                        <td><?= $p['stok_product']; ?></td>
-                                        <td><?= $p['harga_product']; ?></td>
+                                        <td><?= $p['nama']; ?></td>
+                                        <td><?= $p['deskripsi']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('/admin/product/'. $p['id'] . '/edit'); ?>" class="btn btn-warning btn-sm mr-2">
+                                            <a href="<?= base_url('/admin/product/'. $p['id_skala'] . '/edit'); ?>" class="btn btn-warning btn-sm mr-2">
                                                 <i class="fas fa-pencil"></i> Edit
                                             </a>
-                                            <a href="javascript:void(0);" class="btn btn-danger btn-sm mr-2 delete-button" data-url="<?= base_url('/admin/product/' . $p['id']) ?>"><i class="fas fa-trash"></i> Delete</a>
+                                            <a href="javascript:void(0);" class="btn btn-danger btn-sm mr-2 delete-button" data-url="<?= base_url('/admin/product/' . $p['id_skala']) ?>"><i class="fas fa-trash"></i> Delete</a>
                                         </td>
                                         </tr>
                                     <?php endforeach; ?>

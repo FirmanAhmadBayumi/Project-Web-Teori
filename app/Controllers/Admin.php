@@ -5,6 +5,9 @@ use App\Models\AdminModel;
 use App\Models\InventarisModel;
 use App\Models\ProductModel;
 use App\Models\ServiceModel;
+use App\Models\KriteriaModel;
+use App\Models\SkalaModel;
+
 
 use Myth\Auth\Password;
 
@@ -14,12 +17,16 @@ class Admin extends BaseController
     public $ProductModel;
     public $ServiceModel;
     public $adminModel;
+    public $krit;
+    public $skala;
     public function __construct() 
     {
         $this->InventarisModel = new InventarisModel ();
         $this->ProductModel = new ProductModel ();
         $this->ServiceModel = new ServiceModel ();
         $this->adminModel = new AdminModel ();
+        $this->krit = new KriteriaModel();
+        $this->skala = new SkalaModel();
 
     }
     public function index(): string
@@ -32,8 +39,8 @@ class Admin extends BaseController
     public function listInventaris(): string
     {
         $data = [
-            'title' => 'List Inventaris',
-            'inventaris' => $this->InventarisModel->getInventaris(),
+            'title' => 'List Kriteria',
+            'inventaris' => $this->krit->getKriteria(),
         ];
         return view('admin/inventaris',$data);
     }
@@ -41,6 +48,7 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Form Tambah Inventaris',
+            'skala' => $this->skala->getSkala()
         ];
         return view('admin/forminventaris',$data);
     }
@@ -48,7 +56,7 @@ class Admin extends BaseController
     {
         if (!$this->validate([
             'nama_inventaris' => [
-                'rules' => 'required|is_unique[inventaris.nama_inventaris]',
+                'rules' => 'required|is_unique[kode_kriteria.keterangan]',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong.',
                     'is_unique' => '{field} sudah terdaftar.',
@@ -66,10 +74,10 @@ class Admin extends BaseController
                     
                 }
                 
-                $this->InventarisModel->saveInventaris([
-                    'nama_inventaris' => $this->request->getVar('nama_inventaris'),
+                $this->krit->saveKriteria([
+                    'keterangan' => $this->request->getVar('nama_inventaris'),
                     
-                ]);
+                ],$this->request->getVar('skala'));
                 
                 session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
                 return redirect()->to('/admin/inventaris/');
@@ -110,7 +118,7 @@ class Admin extends BaseController
             {
                 $data = [
             'title' => 'List product',
-            'product' => $this->ProductModel->getProduct(),
+            'product' => $this->skala->getSkala(),
             
         ];
         return view('admin/product',$data);
@@ -125,21 +133,6 @@ class Admin extends BaseController
     public function storeproduct()
     {
         if (!$this->validate([
-            'foto_product' => [
-                'rules'         => 'uploaded[foto_product]|is_image[foto_product]|mime_in[foto_product,image/jpg,image/jpeg,image/png]',
-
-                'errors'        => [
-                    'uploaded'  => 'Foto harus dipilih.',
-                    'is_image'  => 'Yang anda pilih bukan gambar.',
-                    'mime_in'   => 'Foto harus berekstensi png,jpg,jpeg,gif.'
-                ]
-                ],
-            'harga_product' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong.',
-                ]
-            ],
             'stok_product' => [
                 'rules' => 'required',
                 'errors' => [
@@ -164,19 +157,10 @@ class Admin extends BaseController
                     
                     
                 }
-                $path = 'assets/img/';
-                $foto = $this->request->getFile('foto_product');
-                $name = $foto->getRandomName();
-
-                if ($foto->move($path, $name)) {
-                    $foto = base_url($path . $name);
-                }
-                $this->ProductModel->saveproduct([
-                    'nama_product' => $this->request->getVar('nama_product'),
-                    'harga_product' => $this->request->getVar('harga_product'),
-                    'stok_product' => $this->request->getVar('stok_product'),
-                    'foto_product' => $foto,
-                    
+                $this->skala->saveSkala([
+                    'nama' => $this->request->getVar('nama_product'),
+                    'deskripsi' => $this->request->getVar('stok_product')
+      
                 ]);
                 
                 session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');

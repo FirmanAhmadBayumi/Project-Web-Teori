@@ -36,6 +36,8 @@ class SispakController extends BaseController {
         $kriteriaUser = $this->request->getVar('id_kriteria');
         $nilaiKriteria = $this->request->getVar('nilai');
 
+        // dd($nilaiKriteria); 
+
         //cek if user gak milih kriteria dan nilai kepercayaan
         $tmp = array_filter($nilaiKriteria);
         if(empty($tmp)) {

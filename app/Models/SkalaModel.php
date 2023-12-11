@@ -52,4 +52,14 @@ class SkalaModel extends Model {
     public function saveSkala($data) {
         $this->insert($data);
     }
+
+    public function updateSkala($id, $data)
+    {
+        return $this->update($id, $data);
+    }
+
+    public function deleteSkala($id)
+    {
+        return $this->delete($id);
+    }
 }

@@ -33,6 +33,7 @@
 </div>
 
 <div class="row">
+  <img style="width:100%;height:600px;" src="<?= base_url('assets/img/admin1.png')?>"> 
 
                         <!-- Area Chart -->
                         <div class="col-xl-12 col-lg-7">

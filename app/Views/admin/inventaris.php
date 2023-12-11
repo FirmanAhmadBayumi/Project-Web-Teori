@@ -30,7 +30,6 @@
                                                 <?= csrf_field() ?>
                                                 <button class="btn btn-danger btn-sm mr-2 delete-button" ><i class="fas fa-trash"></i> Delete</button>
 
-
                                             </form>
                                             
                                         </td>

@@ -64,7 +64,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/admin/inventaris">Kriteria</a>
-                        <a class="collapse-item" href="/admin/product">Deskripsi Kriteria</a>
+                        <a class="collapse-item" href="/admin/product">Skala Investasi</a>
                      
                     </div>
                 </div>

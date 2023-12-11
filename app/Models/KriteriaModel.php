@@ -48,7 +48,15 @@ class KriteriaModel extends Model {
         }
         return $this->where(['id_kriteria' => $id])->first();
     }
-
+    public function saveKriteria($data, $skala) {
+        $this->insert($data);
+        $id = $this->insertID();
+        $this->db->table('basis_pengetahuan')->insert([
+            'id_skala' => $skala,
+            'id_kriteria' => $id,
+            'cf' => 0.6
+        ]);
+    }
 
 
 }

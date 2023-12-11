@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     <title><?= $title;?></title>
 
     <!-- Custom fonts for this template-->
@@ -362,7 +363,12 @@ var myLineChart = new Chart(ctx, {
             }, 3000);
         });
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#skala').select2();
+        });
+    </script>
 </body>
 
 </html>

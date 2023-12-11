@@ -49,5 +49,7 @@ class SkalaModel extends Model {
         return $this->where(['id_skala' => $id])->first();
         ;
     }
-
+    public function saveSkala($data) {
+        $this->insert($data);
+    }
 }

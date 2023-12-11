@@ -29,7 +29,7 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 
-    </div>
+    </div>
     <!-- end banner -->
 
     <!-- start appoinment section -->
@@ -39,7 +39,7 @@
                 <img src="<?= base_url('assets/img/appoinmentImg.jpg') ?>" alt="" class="img-fluid" style="border-radius:25px;">
             </div>
             <div class="col">
-                <p style="text-align: justify">
+            <p style="text-align: justify">
                     Selamat datang di <b>SiProfit</b>, tempat di mana keputusan investasi Anda menjadi lebih cerdas dan terarah. Kami menawarkan solusi inovatif dengan teknologi terkini untuk membantu Anda merinci profil risiko investasi secara akurat. Dengan memahami tingkat kenyamanan, tujuan keuangan, dan horizon investasi Anda, sistem kami menyajikan proses mudah dan transparan, memberikan panduan personal dan relevan. Jangan biarkan kompleksitas investasi membuat Anda ragu. Bersama kami, Anda akan memiliki alat yang dapat diandalkan untuk membuat keputusan investasi yang lebih cerdas, meraih kesuksesan investasi dengan keyakinan yang lebih besar. Selamat menjelajahi peluang investasi dan merencanakan masa depan finansial Anda!
                 </p>
                 <a href="<?= base_url('/user/services') ?>" class="btn btn-info" style="color:whitesmoke; padding:8px;">Jelajahi Sekarang!</a>

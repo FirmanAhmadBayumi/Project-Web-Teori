@@ -58,5 +58,15 @@ class KriteriaModel extends Model {
         ]);
     }
 
+    public function updateKriteria($id, $data)
+    {
+        return $this->update($id, $data);
+    }
+
+    public function deleteUser($id)
+    {
+        return $this->delete($id);
+    }
+
 
 }

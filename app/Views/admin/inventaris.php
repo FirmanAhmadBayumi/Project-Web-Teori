@@ -25,7 +25,14 @@
                                             <a href="<?= base_url('/admin/inventaris/'. $in['id_kriteria'] . '/edit'); ?>" class="btn btn-warning btn-sm mr-2">
                                                 <i class="fas fa-pencil"></i> Edit
                                             </a>
-                                            <a href="javascript:void(0);" class="btn btn-danger btn-sm mr-2 delete-button" data-url="<?= base_url('/admin/inventaris/' . $in['id_kriteria']) ?>"><i class="fas fa-trash"></i> Delete</a>
+                                            <form action="<?= base_url('/admin/inventaris/' . $in['id_kriteria']) ?>" method="post" style="display:inline-block">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <?= csrf_field() ?>
+                                                <button class="btn btn-danger btn-sm mr-2 delete-button" ><i class="fas fa-trash"></i> Delete</button>
+
+
+                                            </form>
+                                            
                                         </td>
                                         </tr>
                                     <?php endforeach; ?>

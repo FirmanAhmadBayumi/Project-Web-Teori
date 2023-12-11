@@ -71,6 +71,10 @@ $routes->get('/user/editprofile','UserController::edit_profile', ['filter'=>'rol
 $routes->put('/user/profile', 'UserController::update', ['filter' => 'role:user']);
 
 
+// $routes->get('/user/(:any)/edit', [UserController::class, 'edit']);
+// $routes->put('/user/(:any)', [UserController::class, 'update']);
+
+
 // task utk mingdep
 
 // arkan:

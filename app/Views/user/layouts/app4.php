@@ -84,7 +84,7 @@
         </div>
     </nav>
     <!-- end navbar -->
-    <div class="navbar-extend"></div>
+  
 
     <?= $this->renderSection('content') ?>
 

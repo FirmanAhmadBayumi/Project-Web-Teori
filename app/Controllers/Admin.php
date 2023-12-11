@@ -19,6 +19,7 @@ class Admin extends BaseController
     public $adminModel;
     public $krit;
     public $skala;
+    
     public function __construct() 
     {
         $this->InventarisModel = new InventarisModel ();
@@ -87,7 +88,7 @@ class Admin extends BaseController
 
                 $data = [
                     'title' => 'Form Update Inventaris',
-                    'inv' =>  $this->InventarisModel->getInventarisid($id)
+                    'inv' =>  $this->krit->getKriteria($id)
                 ];
                 return view('admin/editinventaris',$data);
             }
@@ -95,25 +96,32 @@ class Admin extends BaseController
             {
 
                 $data = [
-                    'nama_inventaris' => $this->request->getVar('nama_inventaris'),
+                    'keterangan' => $this->request->getVar('keterangan'),
                 ];
             
-                $result = $this->InventarisModel->updateInventaris($id, $data);
-            
+                $result = $this->krit->updateKriteria($id, $data);
+      
                 if (!$result) {
                     return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+                    
                 }
             
                 return redirect()->to('/admin/inventaris/');
             }
-            public function destroyInventaris($id)
-            {
-                $result = $this->InventarisModel->deleteInventaris($id);
-                if (!$result) {
-                    return redirect()->back()->with('Error', 'Gagal menghapus Data');
-                }
-                return redirect()->to(base_url('/admin/inventaris/'))->with('success', 'Berhasil menghapus data');
+
+            public function destroyInventaris($id){
+                 $this->krit->deleteUser($id);
+                 return redirect()->to('/admin/inventaris/');
             }
+            
+            // public function destroyInventaris($id)
+            // {
+            //     $result = $this->InventarisModel->deleteInventaris($id);
+            //     if (!$result) {
+            //         return redirect()->back()->with('Error', 'Gagal menghapus Data');
+            //     }
+            //     return redirect()->to(base_url('/admin/inventaris/'))->with('success', 'Berhasil menghapus data');
+            // }
             public function listProduct(): string
             {
                 $data = [

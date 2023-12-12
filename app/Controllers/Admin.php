@@ -34,6 +34,7 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Dashboard',
+            'user_count' => $this->adminModel->countUser()
         ];
         return view('admin/index', $data);
     }

@@ -29,8 +29,6 @@ class Home extends BaseController
 
         if(in_groups("admin")) {
             return redirect()->to("/admin");
-        }else if(in_groups("pegawai")) {
-            return redirect()->to("/pegawai");
         }else{
             return redirect()->to("/user");
         }

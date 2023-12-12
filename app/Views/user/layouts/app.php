@@ -41,18 +41,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url("user/services") ?>">Services</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("user/product") ?>">Products</a>
-                </li>
+      
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url("logout") ?>">Logout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("user/profile") ?>">
-                        <img src="https://picsum.photos/50/50" alt="Profile Picture" class="rounded-circle" style="width:40px; height:50px">
-                        <!-- <br class="navbar-text">John Doe</br> -->
-                    </a>
-                </li>
+               
             </ul>
         </div>
     </nav>
@@ -64,7 +57,7 @@
     <!-- start footer -->
     <footer class="text-dark text-center py-3">
         <div class="container">
-            <p>&copy; 2023 PetCare. All rights reserved.</p>
+            <p>&copy; 2023 SiProfit. All rights reserved.</p>
         </div>
     </footer>
     <!-- end footer -->

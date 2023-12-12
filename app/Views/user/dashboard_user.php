@@ -40,7 +40,7 @@
                 style="border-radius:25px;">
         </div>
         <div class="col">
-            <p>
+            <p style=" text-align: justify;">
                 Selamat datang di <b>SiProfit</b>, tempat di mana keputusan investasi Anda menjadi lebih cerdas dan
                 terarah. Kami menawarkan solusi inovatif dengan teknologi terkini untuk membantu Anda merinci profil
                 risiko investasi secara akurat. Dengan memahami tingkat kenyamanan, tujuan keuangan, dan horizon

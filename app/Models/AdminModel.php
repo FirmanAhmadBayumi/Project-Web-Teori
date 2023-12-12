@@ -48,6 +48,12 @@ class AdminModel extends Model
         ->get()->getResultArray();
     }
 
+    public function countUser(){
+        return $this->db->table('auth_groups_users')
+        ->where('group_id', 1)
+        ->countAllResults();
+    }
+
     public function getPegawai($id){
         return $this->select('users.*')
         ->where('users.id', $id)

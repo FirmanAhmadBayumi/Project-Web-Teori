@@ -62,7 +62,7 @@
                                             </div>
                                         <?php endif; ?> 
 
-                                        <button type="submit" class="btn btn-petcare btn-user btn-block"><?=lang('Auth.loginAction')?></button>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block"><?=lang('Auth.loginAction')?></button>
 
                                     </form>
                                     <hr>

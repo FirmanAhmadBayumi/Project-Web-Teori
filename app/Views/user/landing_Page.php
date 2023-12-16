@@ -1,42 +1,15 @@
 <?= $this->extend('user/layouts/app2'); ?>
 <?= $this->section('contentpage'); ?>
 
-    <!-- start banner -->
-    <div id="demo" class="carousel slide" data-ride="carousel">
-
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="<?= base_url('/assets/img/carousel-1.jpeg') ?>" alt="Los Angeles" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="<?= base_url('/assets/img/carousel-2.png') ?>" alt="Chicago" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="<?= base_url('/assets/img/carousel-3.jpeg') ?>" alt="New York" class="d-block w-100">
-    </div>
-  </div>
-
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-
-    </div>
-    <!-- end banner -->
-
-    <!-- start appoinment section -->
-    <div class="container" style="margin-top:100px;">
+    <!-- Add a section for the "Modul" page -->
+    <section id="modul">
+        <div class="container">
+            <br><br><br>
+            <h2 class="text-center">Apa itu Si Profit</h2>
+            <div class="container" style="margin-top:100px;">
         <div class="row align-items-center">
             <div class="col">
-                <img src="<?= base_url('assets/img/appoinmentImg.jpg') ?>" alt="" class="img-fluid" style="border-radius:25px;">
+                <img src="<?= base_url('assets/img/siprofit.jpg') ?>" alt="" class="img-fluid" style="border-radius:25px;">
             </div>
             <div class="col">
             <p style="text-align: justify">
@@ -56,10 +29,16 @@
         </div>
     </div>
     <!-- end appoinment section -->
+        </div>
+    </section>
 
-    <!-- start our services section -->
+
+    <section id="solve">
+        <div class="container">
+            <!-- start our services section -->
     <div class="wrapper">
         <div class="container text-center">
+            <br><br>
             <h2>Our Services</h2>
             <div class="row cards justify-content-center" style="width:100%">
                 <div class="col-md-3 d-flex justify-content-center" style="margin-top:15px;">
@@ -90,8 +69,41 @@
                     </div>
                 </div>
             </div>
-            <div class="text_link" style="margin-top:50px;">
-                <a href="<?= base_url('/user/services') ?>">See the details</a>
+            
+        </div>
+    </div>
+    <!-- end our services section -->
+            
+                        
+        </div>
+    </section>
+
+
+
+   <!-- Add a section for the "Contact" page -->
+    <section id="contact">
+        <div class="container">
+            <br><br><br><br>    
+            <h2 class="text-center mb-4">Mulai Berkonsultasi</h2>
+            <div class="card p-3 shadow">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="<?= base_url('assets/img/LOG.jpg') ?>" class="img-fluid rounded-box" alt="My Photo"  >
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Silahkan Login, jika belum memiliki akun silahkan register untuk membuat</h3>
+                       <br><br>
+                        <ul style="padding-left:1ps">
+                            <a href="<?= base_url("login") ?>"  class="btn btn-info" style="color:whitesmoke; padding:8px; width:90px;">Login</a>
+                            <a href="<?= base_url("register") ?>"  class="btn btn-info" style="color:whitesmoke; padding:8px; width:90px;">Register</a>
+                        </ul>
+               
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>            <div class="text_link" style="margin-top:40px;">
+        
             </div>
         </div>
     </div>

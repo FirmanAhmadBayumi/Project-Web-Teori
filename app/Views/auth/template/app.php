@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-petcare">
+<body class="bg-primary">
 
     <?= $this->renderSection('content'); ?>
 

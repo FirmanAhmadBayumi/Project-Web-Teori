@@ -58,6 +58,7 @@ $routes->post('pegawai/inventaris/store', [Pegawai::class, 'storeInventaris'], [
 
 //sispak
 $routes->get('/user/formlayanan', 'SispakController::index', ['filter' => 'role:user']);
+$routes->get('/user/dashboard_user', 'SispakController::dashboard_user', ['filter' => 'role:user']);
 $routes->post('/user/hasil', 'SispakController::forward_chaining', ['filter' => 'role:user']);
 //
 $routes->get('/user','UserController::index', ['filter'=>'role:user']);

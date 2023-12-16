@@ -31,6 +31,16 @@ class SispakController extends BaseController {
         return view('user/formlayanan', $data);
     }
 
+    public function dashboard_user() {
+
+        $data = [
+            'title' => 'Home',
+        ];
+        // dd($this->basisPengetahuan->getData()->groupBy('basis_pengetahuan.id_gejala')->findAll());
+        // dd($data);
+        return view('user/dashboard_user', $data);
+    }
+
     public function forward_chaining() {
 
         $kriteriaUser = $this->request->getVar('id_kriteria');

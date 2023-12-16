@@ -50,7 +50,7 @@ class SkalaModel extends Model {
         ;
     }
     public function saveSkala($data) {
-        $this->insert($data);
+        $this->insert($data) ;
     }
 
     public function updateSkala($id, $data)

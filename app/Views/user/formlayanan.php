@@ -28,10 +28,10 @@
                                 <?php
                                 $no = 1;
                                 foreach($basisPengetahuan as $b): ?>
-                                    <tr>
+                                    <tr id="t1">
     
                                         <td>
-                                            <?= $no++; ?>
+                                            <?= $no; ?>
                                         </td>
                                         <td>
                                             <input type="hidden" name="id_kriteria[]" value="<?= $b['id_kriteria']; ?>">
@@ -41,21 +41,21 @@
                                         </td>
                                   
                                         <td>
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="1">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="1" id="b1[<?= $no ?>]">
                                         </td>
                                         <td>
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.8">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.8" id="b0.8[<?= $no ?>]">
                                         </td>
                                         <td>
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.4">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.4" id="b0.4[<?= $no ?>]">
                                         </td>
                                         <td>
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0" id="b0[<?= $no ?>]">
                                         </td>
                                     
     
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php $no++; endforeach; ?>
                             </table>
                             <div id="btn-diagnosis">
                                 <button class="btn btn-lg btn-primary">Submit</button>
@@ -71,4 +71,78 @@
     </div>
 
 </div>
+<script>
+    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        if(document.getElementById('b1[3]').checked) {
+            document.getElementById('b1[4]').disabled = true;
+            document.getElementById('b1[5]').disabled = true;
+            document.getElementById('b1[4]').checked = false;
+            document.getElementById('b1[5]').checked = false;
+        }else if(document.getElementById('b1[4]').checked) {
+            document.getElementById('b1[3]').disabled = true;
+            document.getElementById('b1[5]').disabled = true;
+            document.getElementById('b1[3]').checked = false;
+            document.getElementById('b1[5]').checked = false;
+        }else if(document.getElementById('b1[5]').checked) {
+            document.getElementById('b1[3]').disabled = true;
+            document.getElementById('b1[4]').disabled = true;
+            document.getElementById('b1[3]').checked = false;
+            document.getElementById('b1[4]').checked = false;
+        }else{
+            document.getElementById('b1[3]').disabled = false;
+            document.getElementById('b1[4]').disabled = false;
+            document.getElementById('b1[5]').disabled = false;
+      }
+    });
+    radio.addEventListener('change', function() {
+        if(document.getElementById('b0.8[3]').checked || document.getElementById('b0.4[3]').checked) {
+            document.getElementById('b0.8[4]').disabled = true;
+            document.getElementById('b0.8[5]').disabled = true;
+            document.getElementById('b0.8[4]').checked = false;
+            document.getElementById('b0.8[5]').checked = false;
+            document.getElementById('b0.4[4]').disabled = true;
+            document.getElementById('b0.4[5]').disabled = true;
+            document.getElementById('b0.4[4]').checked = false;
+            document.getElementById('b0.4[5]').checked = false;
+        }else if(document.getElementById('b0.8[4]').checked || document.getElementById('b0.4[4]').checked) {
+            document.getElementById('b0.8[3]').disabled = true;
+            document.getElementById('b0.8[5]').disabled = true;
+            document.getElementById('b0.8[3]').checked = false;
+            document.getElementById('b0.8[5]').checked = false;
+            document.getElementById('b0.4[3]').disabled = true;
+            document.getElementById('b0.4[5]').disabled = true;
+            document.getElementById('b0.4[3]').checked = false;
+            document.getElementById('b0.4[5]').checked = false;
+        }else if(document.getElementById('b0.8[5]').checked || document.getElementById('b0.4[5]').checked) {
+            document.getElementById('b0.8[3]').disabled = true;
+            document.getElementById('b0.8[4]').disabled = true;
+            document.getElementById('b0.8[3]').checked = false;
+            document.getElementById('b0.8[4]').checked = false;
+            document.getElementById('b0.4[3]').disabled = true;
+            document.getElementById('b0.4[4]').disabled = true;
+            document.getElementById('b0.4[3]').checked = false;
+            document.getElementById('b0.4[4]').checked = false;
+        }else{
+            document.getElementById('b0.8[3]').disabled = false;
+            document.getElementById('b0.8[4]').disabled = false;
+            document.getElementById('b0.8[5]').disabled = false;
+            document.getElementById('b0.4[3]').disabled = false;
+            document.getElementById('b0.4[4]').disabled = false;
+            document.getElementById('b0.4[5]').disabled = false;
+      }
+    });
+    });
+  </script>
+<!-- <script>
+        $('#b1[3]').on('change', function(){
+            $('#b1[4]').prop('disabled', true);
+            $('#b1[5]').prop('disabled', true);
+        });
+        const radio = document.getElementById("b1[3]");
+        radio.addEventListener("click", function(){
+            document.getElementById("b1[4]").disabled = true;  
+            document.getElementById("b1[5]").disabled = true;
+        });
+</script> -->
 <?= $this->endSection(); ?>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\Admin;
+use App\Controllers\MagangController;
 use App\Controllers\UserController;
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Pegawai;
@@ -71,19 +72,8 @@ $routes->get('/user/editprofile','UserController::edit_profile', ['filter'=>'rol
 $routes->put('/user/profile', 'UserController::update', ['filter' => 'role:user']);
 
 
-// $routes->get('/user/(:any)/edit', [UserController::class, 'edit']);
-// $routes->put('/user/(:any)', [UserController::class, 'update']);
-
-
-// task utk mingdep
-
-// arkan:
-// - buat dynamic data utk dashboard admin & pegawai
-// - fix edit profile(?)
-// - make sure all function is running well
-
-// ara:
-// - crud inventaris & produk di page pegawai 
-// - fix create + edit table product
-
-
+$routes->get('/showDataMahasiswaMagang/(:any)', [MagangController::class, 'index']);
+$routes->get('/showDataMahasiswaMagang', [MagangController::class, 'index']);
+$routes->post('/addDataMahasiswaMagang', [MagangController::class, 'create']);
+$routes->delete('/deleteDataMahasiswaMagang/(:any)', [MagangController::class, 'delete']);
+$routes->put('/updateDataMahasiswaMagang/(:any)', [MagangController::class, 'update']);

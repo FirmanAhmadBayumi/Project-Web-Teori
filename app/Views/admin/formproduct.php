@@ -3,13 +3,13 @@
 
 <div class="card shadow mb-4">
 <div class="card-header py-3">
-<h6 class="m-0 font-weight-bold text-petcare">Form Tambah Product</h6>
+<h6 class="m-0 font-weight-bold text-petcare">Form Tambah Skala</h6>
 </div>
 <div class="card-body">
     <form action="<?=base_url('/admin/product/store')?>" method="POST"  enctype="multipart/form-data">
   <div class="form-group">
     <br>
-    <label for="nama">Nama</label>
+    <label for="nama">Skala</label>
     <input type="text" name="nama_product" class="form-control <?php if (session()->getFlashdata('error_nama_product')) echo 'is-invalid'; ?>" value="<?= old('nama_product'); ?>">
             <?php if (session()->getFlashdata('error_nama_product')) : ?>
               <div class="invalid-feedback">

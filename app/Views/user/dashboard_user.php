@@ -2,35 +2,34 @@
 <?= $this->section('content'); ?>
 
 <!-- start banner -->
-<div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="<?= base_url('/assets/img/carousel-1.jpeg') ?>" alt="Los Angeles" class="d-block w-100">
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="<?= base_url('/assets/img/carousel-1.jpeg') ?>" class="d-block w-100" alt="carousel- 1">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url('/assets/img/carousel-2.png') ?>" class="d-block w-100" alt="carousel- 2">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url('/assets/img/carousel-3.jpeg') ?>" class="d-block w-100" alt="carousel- 3">
-        </div>
+    <div class="carousel-item">
+      <img src="<?= base_url('/assets/img/carousel-2.png') ?>" alt="Chicago" class="d-block w-100">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+    <div class="carousel-item">
+      <img src="<?= base_url('/assets/img/carousel-3.jpeg') ?>" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+    </div>
 <!-- end banner -->
 
 <!-- start appoinment section -->
@@ -41,7 +40,7 @@
                 style="border-radius:25px;">
         </div>
         <div class="col">
-            <p>
+            <p style=" text-align: justify;">
                 Selamat datang di <b>SiProfit</b>, tempat di mana keputusan investasi Anda menjadi lebih cerdas dan
                 terarah. Kami menawarkan solusi inovatif dengan teknologi terkini untuk membantu Anda merinci profil
                 risiko investasi secara akurat. Dengan memahami tingkat kenyamanan, tujuan keuangan, dan horizon
@@ -76,8 +75,8 @@
     <div class="container text-center">
         <h2>Our Services</h2>
         <div class="row cards justify-content-center" style="width:100%">
-            <div class="col-md-3 d-flex justify-content-center" style="margin-top:15px;">
-                <div class="card" style="width:18rem;">
+            <div class="col-md-4 d-flex justify-content-center" style="margin-top:15px;">
+                <div class="card">
                     <div class="card-body">
                         <img src="<?= base_url('/assets/img/service-1.jpg') ?>" alt="" class="icon"
                             style="width:130px; height:100px">
@@ -90,8 +89,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 d-flex justify-content-center" style="margin-top:15px;">
-                <div class="card" style="width:18rem;">
+            <div class="col-md-4 d-flex justify-content-center" style="margin-top:15px;">
+                <div class="card">
                     <div class="card-body">
                         <img src="<?= base_url('/assets/img/service-2.jpg') ?>" alt="" class="icon"
                             style="width:130px; height:100px">
@@ -104,8 +103,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 d-flex justify-content-center" style="margin-top:15px;">
-                <div class="card" style="width:18rem;">
+            <div class="col-md-4 d-flex justify-content-center" style="margin-top:15px;">
+                <div class="card">
                     <div class="card-body">
                         <img src="<?= base_url('/assets/img/service-3.jpg') ?>" alt="" class="icon"
                             style="width:130px; height:100px">
@@ -125,5 +124,6 @@
     </div>
 </div>
 <!-- end our services section -->
+
 
 <?= $this->endSection(); ?>

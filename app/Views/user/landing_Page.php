@@ -2,31 +2,33 @@
 <?= $this->section('contentpage'); ?>
 
     <!-- start banner -->
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="<?= base_url('/assets/img/carousel-1.jpeg') ?>" class="d-block w-100" alt="carousel- 1">
-            </div>
-            <div class="carousel-item">
-            <img src="<?= base_url('/assets/img/carousel-2.png') ?>" class="d-block w-100" alt="carousel- 2">
-            </div>
-            <div class="carousel-item">
-            <img src="<?= base_url('/assets/img/carousel-3.jpeg') ?>" class="d-block w-100" alt="carousel- 3">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="<?= base_url('/assets/img/carousel-1.jpeg') ?>" alt="Los Angeles" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="<?= base_url('/assets/img/carousel-2.png') ?>" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="<?= base_url('/assets/img/carousel-3.jpeg') ?>" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
     </div>
     <!-- end banner -->
 
@@ -37,7 +39,7 @@
                 <img src="<?= base_url('assets/img/appoinmentImg.jpg') ?>" alt="" class="img-fluid" style="border-radius:25px;">
             </div>
             <div class="col">
-                <p>
+            <p style="text-align: justify">
                     Selamat datang di <b>SiProfit</b>, tempat di mana keputusan investasi Anda menjadi lebih cerdas dan terarah. Kami menawarkan solusi inovatif dengan teknologi terkini untuk membantu Anda merinci profil risiko investasi secara akurat. Dengan memahami tingkat kenyamanan, tujuan keuangan, dan horizon investasi Anda, sistem kami menyajikan proses mudah dan transparan, memberikan panduan personal dan relevan. Jangan biarkan kompleksitas investasi membuat Anda ragu. Bersama kami, Anda akan memiliki alat yang dapat diandalkan untuk membuat keputusan investasi yang lebih cerdas, meraih kesuksesan investasi dengan keyakinan yang lebih besar. Selamat menjelajahi peluang investasi dan merencanakan masa depan finansial Anda!
                 </p>
                 <a href="<?= base_url('/user/services') ?>" class="btn btn-info" style="color:whitesmoke; padding:8px;">Jelajahi Sekarang!</a>

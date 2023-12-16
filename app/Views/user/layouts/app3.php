@@ -47,23 +47,20 @@
                     <a class="nav-link" href="<?= base_url("user/services") ?>">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("user/product") ?>">Products</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url("logout") ?>">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- end navbar -->
-    <div class="navbar-extend"></div>
+
 
     <?= $this->renderSection('content') ?>
 
     <!-- start footer -->
     <footer class="text-dark text-center py-3">
         <div class="container">
-            <p>&copy; 2023 PetCare. All rights reserved.</p>
+            <p>&copy; 2023 SiProfit. All rights reserved.</p>
         </div>
     </footer>
     <!-- end footer -->

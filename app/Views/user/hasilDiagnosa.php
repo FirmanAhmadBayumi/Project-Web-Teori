@@ -10,6 +10,7 @@
                     <div class="card-body text-center">
                         <p>
                             <h1><?= $hasil['nama'] ?></h1>
+                            <p><?= $hasil['deskripsi'] ?></p>
                         </p>
                     </div>
 

@@ -19,6 +19,7 @@ class Admin extends BaseController
     public $adminModel;
     public $krit;
     public $skala;
+    
     public function __construct() 
     {
         $this->InventarisModel = new InventarisModel ();
@@ -33,6 +34,7 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Dashboard',
+            'user_count' => $this->adminModel->countUser()
         ];
         return view('admin/index', $data);
     }
@@ -87,7 +89,7 @@ class Admin extends BaseController
 
                 $data = [
                     'title' => 'Form Update Inventaris',
-                    'inv' =>  $this->InventarisModel->getInventarisid($id)
+                    'inv' =>  $this->krit->getKriteria($id)
                 ];
                 return view('admin/editinventaris',$data);
             }
@@ -95,25 +97,32 @@ class Admin extends BaseController
             {
 
                 $data = [
-                    'nama_inventaris' => $this->request->getVar('nama_inventaris'),
+                    'keterangan' => $this->request->getVar('keterangan'),
                 ];
             
-                $result = $this->InventarisModel->updateInventaris($id, $data);
-            
+                $result = $this->krit->updateKriteria($id, $data);
+      
                 if (!$result) {
                     return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+                    
                 }
             
                 return redirect()->to('/admin/inventaris/');
             }
-            public function destroyInventaris($id)
-            {
-                $result = $this->InventarisModel->deleteInventaris($id);
-                if (!$result) {
-                    return redirect()->back()->with('Error', 'Gagal menghapus Data');
-                }
-                return redirect()->to(base_url('/admin/inventaris/'))->with('success', 'Berhasil menghapus data');
+
+            public function destroyInventaris($id){
+                 $this->krit->deleteUser($id);
+                 return redirect()->to('/admin/inventaris/');
             }
+            
+            // public function destroyInventaris($id)
+            // {
+            //     $result = $this->InventarisModel->deleteInventaris($id);
+            //     if (!$result) {
+            //         return redirect()->back()->with('Error', 'Gagal menghapus Data');
+            //     }
+            //     return redirect()->to(base_url('/admin/inventaris/'))->with('success', 'Berhasil menghapus data');
+            // }
             public function listProduct(): string
             {
                 $data = [
@@ -171,50 +180,34 @@ class Admin extends BaseController
 
                 $data = [
                     'title' => 'Form Update product',
-                    'p' =>  $this->ProductModel->getproductid($id)
+                    'p' =>  $this->skala->getSkala($id)
                 ];
+                // dd($data);
                 return view('admin/editproduct',$data);
             }
+
             public function updateproduct($id)
             {
-
-                $path = 'assets/img/';
-                $foto = $this->request->getFile('foto_product');
-            
-                // Periksa apakah ada file foto baru yang diunggah
-                if ($foto->isValid()) {
-                    $name = $foto->getRandomName();
-                    if ($foto->move($path, $name)) {
-                        $foto = base_url($path . $name);
-                    }
-                } else {
-                    $existingData = $this->ProductModel->getproductid($id); 
-                    $foto = $existingData['foto_product'];
-                }
-            
                 $data = [
-                    'nama_product' => $this->request->getVar('nama_product'),
-                    'harga_product' => $this->request->getVar('harga_product'),
-                    'stok_product' => $this->request->getVar('stok_product'),
-                    'foto_product' => $foto,
+                    'nama' => $this->request->getVar('nama'),
+                    'deskripsi' => $this->request->getVar('deskripsi'),
                 ];
             
-                $result = $this->ProductModel->updateproduct($id, $data);
-            
+                $result = $this->skala->updateSkala($id, $data);
+      
                 if (!$result) {
                     return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+                    
                 }
             
                 return redirect()->to('admin/product');
             }
             public function destroyproduct($id)
             {
-                $result = $this->ProductModel->deleteproduct($id);
-                if (!$result) {
-                    return redirect()->back()->with('Error', 'Gagal menghapus Data');
-                }
-                return redirect()->to(base_url('/admin/product/'))->with('success', 'Berhasil menghapus data');
+                $this->skala->deleteSkala($id);
+                return redirect()->to('admin/product');
             }
+            
     public function listService(): string
     {
         $data = [

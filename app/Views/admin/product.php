@@ -12,20 +12,22 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Skala</th>
-                                            <th>Deskripsi</th>   
+                                            <th>Deskripsi</th>
+                                            <th>Saran</th>   
                                             <th>Action</th>                 
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php $i = 1; ?>
-                                     <?php foreach ($product as $p) : ?>
+                                    <?php foreach ($product as $p) : ?>
                                         <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $p['nama']; ?></td>
                                         <td style="max-width: 500px; text-align: justify"><?= $p['deskripsi']; ?></td>
-                                        <td>
+                                        <td style="max-width: 500px; text-align: justify"><?= $p['saran']; ?></td>
+                                        <td class="col-3">
                                             <a href="<?= base_url('/admin/product/'. $p['id_skala'] . '/edit'); ?>" class="btn btn-warning btn-sm mr-2">
-                                                <i class="fas fa-pencil"></i> Edit
+                                                <i class="fas fa-edit"></i> Edit
                                             </a>
                         
                                             <form action="<?= base_url('/admin/product/' . $p['id_skala']) ?>" method="post" style="display: inline-block">

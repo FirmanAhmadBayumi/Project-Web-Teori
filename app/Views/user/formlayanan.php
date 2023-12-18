@@ -1,5 +1,5 @@
 <?= $this->extend('user/layouts/app3'); ?>
-<?= $this->section('content'); ?>
+<?= $this->section('contentpage'); ?>
 <div class="container-1" style="border-radius: 20px;">
     <h1 class="text-center">Form Pertanyaan</h1>
     <div class="section-body">
@@ -39,21 +39,19 @@
                                             <?= $b['keterangan']; ?>
     
                                         </td>
-                                  
-                                        <td>
+                                
+                                        <td class="text-center">
                                             <input type="radio" name="nilai[<?= $no ?>]" value="1" id="b1[<?= $no ?>]">
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <input type="radio" name="nilai[<?= $no ?>]" value="0.8" id="b0.8[<?= $no ?>]">
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <input type="radio" name="nilai[<?= $no ?>]" value="0.4" id="b0.4[<?= $no ?>]">
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <input type="radio" name="nilai[<?= $no ?>]" value="0" id="b0[<?= $no ?>]">
                                         </td>
-                                    
-    
                                     </tr>
                                 <?php $no++; endforeach; ?>
                             </table>

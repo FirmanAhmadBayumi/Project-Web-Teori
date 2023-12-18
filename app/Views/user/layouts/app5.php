@@ -26,7 +26,7 @@
                     <a class="nav-link" href="/user/dashboard_user" style="color: black">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/formlayanan" style="color: black">Konsultasi</a>
+                    <a class="nav-link" href="/user/services" style="color: black">Konsultasi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('logout') ?>" style="color: black">Logout</a>

@@ -17,13 +17,13 @@
                                     </thead>
                                     <tbody>
                                     <?php $i = 1; ?>
-                                     <?php foreach ($inventaris as $in) : ?>
+                                    <?php foreach ($inventaris as $in) : ?>
                                         <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $in['keterangan']; ?></td>
                                         <td>
                                             <a href="<?= base_url('/admin/inventaris/'. $in['id_kriteria'] . '/edit'); ?>" class="btn btn-warning btn-sm mr-2">
-                                                <i class="fas fa-pencil"></i> Edit
+                                                <i class="fas fa-edit"></i> Edit
                                             </a>
                                             <form action="<?= base_url('/admin/inventaris/' . $in['id_kriteria']) ?>" method="post" style="display:inline-block">
                                                 <input type="hidden" name="_method" value="DELETE">

@@ -72,7 +72,7 @@ $routes->get('/user/profile','UserController::profiles', ['filter'=>'role:user']
 $routes->get('/user/editprofile','UserController::edit_profile', ['filter'=>'role:user']);
 $routes->put('/user/profile', 'UserController::update', ['filter' => 'role:user']);
 
-
+//API
 $routes->get('/showDataMahasiswaMagang/(:any)', [MagangController::class, 'index']);
 $routes->get('/showDataMahasiswaMagang', [MagangController::class, 'index']);
 $routes->post('/addDataMahasiswaMagang', [MagangController::class, 'create']);

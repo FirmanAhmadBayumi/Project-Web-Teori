@@ -168,8 +168,8 @@ class Admin extends BaseController
                 }
                 $this->skala->saveSkala([
                     'nama' => $this->request->getVar('nama_product'),
-                    'deskripsi' => $this->request->getVar('stok_product')
-      
+                    'deskripsi' => $this->request->getVar('stok_product'),
+                    'saran' => $this->request->getVar('saran')
                 ]);
                 
                 session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
@@ -191,6 +191,7 @@ class Admin extends BaseController
                 $data = [
                     'nama' => $this->request->getVar('nama'),
                     'deskripsi' => $this->request->getVar('deskripsi'),
+                    'saran'=> $this->request->getVar('saran')
                 ];
             
                 $result = $this->skala->updateSkala($id, $data);

@@ -29,7 +29,18 @@
                 <?= session()->getFlashdata('error_stok_product') ?>
               </div>
             <?php endif; ?>
+  </div>
 
+  <div class="form-group">
+    <label for="stok_product">Saran</label>
+    <textarea name="saran" class="form-control" >
+    <?= $p['saran'] ?>
+    </textarea>
+            <?php if (session()->getFlashdata('error_stok_product')) : ?>
+              <div class="invalid-feedback">
+                <?= session()->getFlashdata('error_stok_product') ?>
+              </div>
+            <?php endif; ?>
   </div>
   
   <div class="form-group">

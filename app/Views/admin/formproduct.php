@@ -26,6 +26,18 @@
               </div>
             <?php endif; ?>
   </div>
+  <div class="form-group">
+    <label for="saran">Saran</label>
+    <textarea type="text" name="saran" class="form-control <?php if (session()->getFlashdata('error_saran'))
+        echo 'is-invalid'; ?>"
+      value="<?= old('saran'); ?>">
+    </textarea>
+    <?php if (session()->getFlashdata('error_saran')): ?>
+      <div class="invalid-feedback">
+        <?= session()->getFlashdata('error_saran') ?>
+      </div>
+    <?php endif; ?>
+  </div>
 
   <br>
   <a href="/admin/product/" class="btn btn-warning">Kembali</a>

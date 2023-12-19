@@ -35,7 +35,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-cat"></i>
+                <i class="fa-solid fa-hand-holding-dollar" style="color: #0f0f0f;"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Si Profit</div>
             </a>

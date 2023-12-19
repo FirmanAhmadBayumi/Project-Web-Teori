@@ -13,7 +13,7 @@ class MagangController extends BaseController
     public function __construct(){
         $this->magangModel = new MagangModel();
     }
-    public function index($npm)
+    public function index($npm=null)
     {
         $mahasiswa = $this->magangModel->showData($npm);
 
@@ -59,12 +59,14 @@ class MagangController extends BaseController
 
     public function update($npm)
     {
-        $data = [
-            'nama' => $this->request->getVar('nama'),
-            'semester' => $this->request->getVar('semester'),
-            'ipk' => $this->request->getVar('ipk'),
-            'tempat' => $this->request->getVar('tempat'),
-        ];
+        // $data = [
+        //     'nama' => $this->request->getVar('nama'),
+        //     'semester' => $this->request->getVar('semester'),
+        //     'ipk' => $this->request->getVar('ipk'),
+        //     'tempat' => $this->request->getVar('tempat'),
+        // ];
+
+        $data = $this->request->getRawInput();
         $update = $this->magangModel->updateData($npm, $data);
 
         $result = [

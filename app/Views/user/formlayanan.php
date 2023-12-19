@@ -41,16 +41,16 @@
                                         </td>
                                 
                                         <td class="text-center">
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="1" id="b1[<?= $no ?>]">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="1" id="b1[<?= $no ?>]" required>
                                         </td>
                                         <td class="text-center">
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.8" id="b0.8[<?= $no ?>]">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.8" id="b0.8[<?= $no ?>]" required>
                                         </td>
                                         <td class="text-center">
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.4" id="b0.4[<?= $no ?>]">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0.4" id="b0.4[<?= $no ?>]" required>
                                         </td>
                                         <td class="text-center">
-                                            <input type="radio" name="nilai[<?= $no ?>]" value="0" id="b0[<?= $no ?>]">
+                                            <input type="radio" name="nilai[<?= $no ?>]" value="0" id="b0[<?= $no ?>]" required>
                                         </td>
                                     </tr>
                                 <?php $no++; endforeach; ?>
@@ -72,62 +72,62 @@
 <script>
     document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
       radio.addEventListener('change', function() {
-        if(document.getElementById('b1[3]').checked) {
+        if(document.getElementById('b1[2]').checked) {
+            document.getElementById('b1[3]').disabled = true;
             document.getElementById('b1[4]').disabled = true;
-            document.getElementById('b1[5]').disabled = true;
+            document.getElementById('b1[3]').checked = false;
             document.getElementById('b1[4]').checked = false;
-            document.getElementById('b1[5]').checked = false;
+        }else if(document.getElementById('b1[3]').checked) {
+            document.getElementById('b1[2]').disabled = true;
+            document.getElementById('b1[4]').disabled = true;
+            document.getElementById('b1[2]').checked = false;
+            document.getElementById('b1[4]').checked = false;
         }else if(document.getElementById('b1[4]').checked) {
+            document.getElementById('b1[2]').disabled = true;
             document.getElementById('b1[3]').disabled = true;
-            document.getElementById('b1[5]').disabled = true;
+            document.getElementById('b1[2]').checked = false;
             document.getElementById('b1[3]').checked = false;
-            document.getElementById('b1[5]').checked = false;
-        }else if(document.getElementById('b1[5]').checked) {
-            document.getElementById('b1[3]').disabled = true;
-            document.getElementById('b1[4]').disabled = true;
-            document.getElementById('b1[3]').checked = false;
-            document.getElementById('b1[4]').checked = false;
         }else{
+            document.getElementById('b1[2]').disabled = false;
             document.getElementById('b1[3]').disabled = false;
             document.getElementById('b1[4]').disabled = false;
-            document.getElementById('b1[5]').disabled = false;
       }
     });
     radio.addEventListener('change', function() {
-        if(document.getElementById('b0.8[3]').checked || document.getElementById('b0.4[3]').checked) {
+        if(document.getElementById('b0.8[2]').checked || document.getElementById('b0.4[2]').checked) {
+            document.getElementById('b0.8[3]').disabled = true;
             document.getElementById('b0.8[4]').disabled = true;
-            document.getElementById('b0.8[5]').disabled = true;
+            document.getElementById('b0.8[3]').checked = false;
             document.getElementById('b0.8[4]').checked = false;
-            document.getElementById('b0.8[5]').checked = false;
+            document.getElementById('b0.4[3]').disabled = true;
             document.getElementById('b0.4[4]').disabled = true;
-            document.getElementById('b0.4[5]').disabled = true;
+            document.getElementById('b0.4[3]').checked = false;
             document.getElementById('b0.4[4]').checked = false;
-            document.getElementById('b0.4[5]').checked = false;
+        }else if(document.getElementById('b0.8[3]').checked || document.getElementById('b0.4[3]').checked) {
+            document.getElementById('b0.8[2]').disabled = true;
+            document.getElementById('b0.8[4]').disabled = true;
+            document.getElementById('b0.8[2]').checked = false;
+            document.getElementById('b0.8[4]').checked = false;
+            document.getElementById('b0.4[2]').disabled = true;
+            document.getElementById('b0.4[4]').disabled = true;
+            document.getElementById('b0.4[2]').checked = false;
+            document.getElementById('b0.4[4]').checked = false;
         }else if(document.getElementById('b0.8[4]').checked || document.getElementById('b0.4[4]').checked) {
+            document.getElementById('b0.8[2]').disabled = true;
             document.getElementById('b0.8[3]').disabled = true;
-            document.getElementById('b0.8[5]').disabled = true;
+            document.getElementById('b0.8[2]').checked = false;
             document.getElementById('b0.8[3]').checked = false;
-            document.getElementById('b0.8[5]').checked = false;
+            document.getElementById('b0.4[2]').disabled = true;
             document.getElementById('b0.4[3]').disabled = true;
-            document.getElementById('b0.4[5]').disabled = true;
+            document.getElementById('b0.4[2]').checked = false;
             document.getElementById('b0.4[3]').checked = false;
-            document.getElementById('b0.4[5]').checked = false;
-        }else if(document.getElementById('b0.8[5]').checked || document.getElementById('b0.4[5]').checked) {
-            document.getElementById('b0.8[3]').disabled = true;
-            document.getElementById('b0.8[4]').disabled = true;
-            document.getElementById('b0.8[3]').checked = false;
-            document.getElementById('b0.8[4]').checked = false;
-            document.getElementById('b0.4[3]').disabled = true;
-            document.getElementById('b0.4[4]').disabled = true;
-            document.getElementById('b0.4[3]').checked = false;
-            document.getElementById('b0.4[4]').checked = false;
         }else{
+            document.getElementById('b0.8[2]').disabled = false;
             document.getElementById('b0.8[3]').disabled = false;
             document.getElementById('b0.8[4]').disabled = false;
-            document.getElementById('b0.8[5]').disabled = false;
+            document.getElementById('b0.4[2]').disabled = false;
             document.getElementById('b0.4[3]').disabled = false;
             document.getElementById('b0.4[4]').disabled = false;
-            document.getElementById('b0.4[5]').disabled = false;
       }
     });
     });
